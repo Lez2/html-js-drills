@@ -22,7 +22,7 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'Rufus!';
 }
 
 function addFavoriteThings() {
@@ -31,6 +31,17 @@ function addFavoriteThings() {
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
   // 3. Add them to append them to favthings
+  let li = document.createElement('li');
+  li.textContent = 'Drinking Toliet water';
+  favthings.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = 'Enjoying a savory bone';
+  favthings.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = 'Chasing my tail';
+  favthings.appendChild(li);
 
   // See:
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
@@ -41,6 +52,8 @@ function addFavoriteThings() {
 function replaceImage() {
   console.log('Called replaceImage()');
 
+  document.getElementById("picture").src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg";
+
   // Change the puppy picture to a picture of your choosing
 
   // See:
@@ -50,6 +63,10 @@ function replaceImage() {
 
 function changeCodeStatus() {
   console.log('Called changeCodeStatus()');
+
+  let newMeme = document.querySelector('#codestatus');
+  newMeme.innerHTML = '<img src="https://media.giphy.com/media/4T7e4DmcrP9du/giphy.gif"/>';
+
 
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
@@ -89,14 +106,52 @@ informationForm.addEventListener('submit', function(event) {
   event.preventDefault(); // You will want this here. Remove it and see what changes.
 
   console.log('Form submitted');
+//firstname
+  var nameValue = document.getElementById('fname').value;
+  console.log(nameValue);
+
+  firstname = document.querySelector('#firstname');
+  firstname.innerText = nameValue;
+//lastname
+  var nameValue2 = document.getElementById('lname').value;
+  console.log(nameValue2);
+
+  lastname = document.querySelector('#lastname');
+  lastname.innerText = nameValue2;
+
+//car
+  var nameValue3 = document.getElementById('cars').value;
+  console.log(nameValue3);
+
+  car = document.querySelector('#chosencar');
+  car.innerText = nameValue3;
+//icecream
+  var nameValue4 = document.querySelector('input[name=icecream]:checked').value;
+  console.log(nameValue4);
+
+  icecream = document.querySelector('#icecreamstatus');
+  icecream.innerText = nameValue4;
+//checks
+let isHuman = document.querySelector('#humancheck').checked;
+let isCoder = document.querySelector('#codercheck').checked;
+
+if(isHuman){
+    document.querySelector('#checks').append("This person is a human")
+}
+if(isCoder){
+    document.querySelector('#checks').append("This person is a coder")
+}
+})
+//var nameValue5 = document.getElementsByClassName('form-check-input').checked;
 
   // Your job:
   //   1. Get information typed into the form
   //   2. Display that info in "Display that info here" section
 
+
   // Google things like:
   //   javascript form element get values
-});
+
 
 /*************************************
  * Section 3 - Clicks and Keypresses *
@@ -104,11 +159,14 @@ informationForm.addEventListener('submit', function(event) {
  *
  * Description:
  *   Make the buttons in section 3 of index.html behave as described below.
- *
+ *this code doesn't work yet
  */
-
+  document.querySelector('#console-log-button').addeventListener("click", function(){
+    console.log("You clicked the buttom!")
+  })
 // When a user clicks "Click me to log something to the console"
 // then log something to the console
+
 
 // Fill in ________ to get a reference to the correct button on the page
 let consoleLogButton = document.querySelector('#________');
